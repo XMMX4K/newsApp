@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:newsapp/widgets/newsCateList.dart';
 import 'package:newsapp/widgets/newsCategory.dart';
 
 class HomeView extends StatelessWidget {
@@ -21,13 +22,7 @@ class HomeView extends StatelessWidget {
           children: [
             SizedBox(
               height: 100,
-              child: ListView.builder(
-                  physics: BouncingScrollPhysics(),
-                  scrollDirection: Axis.horizontal,
-                  itemCount: 10,
-                  itemBuilder: (context, index) {
-                    return NewsCategory();
-                  }),
+              child: newsCateListView(),
             )
           ],
         ),

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:newsapp/models/newsCategoryModel.dart';
 
 class NewsCategory extends StatelessWidget {
-  const NewsCategory({super.key});
+  NewsCategory(this.Category);
+
+  CategoryModel Category;
 
   @override
   Widget build(BuildContext context) {
@@ -12,10 +15,10 @@ class NewsCategory extends StatelessWidget {
       decoration: BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(32)),
           image: DecorationImage(
-              image: AssetImage('assets/news/Buss.avif'), fit: BoxFit.fill)),
+              image: AssetImage('${Category.image}'), fit: BoxFit.fill)),
       child: Center(
         child: Text(
-          'Business',
+          '${Category.categoryname}',
           style: TextStyle(
               color: Colors.white, fontSize: 25, fontWeight: FontWeight.w300),
         ),
