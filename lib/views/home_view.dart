@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:newsapp/widgets/newsCateList.dart';
-import 'package:newsapp/widgets/newsCategory.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -23,7 +22,10 @@ class HomeView extends StatelessWidget {
             SizedBox(
               height: 100,
               child: newsCateListView(),
-            )
+            ),
+            SizedBox(
+              height: 10,
+            ),
           ],
         ),
       ),

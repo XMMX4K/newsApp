@@ -4,7 +4,7 @@ import 'package:newsapp/models/newsCategoryModel.dart';
 class NewsCategory extends StatelessWidget {
   NewsCategory(this.Category);
 
-  CategoryModel Category;
+  final CategoryModel Category;
 
   @override
   Widget build(BuildContext context) {

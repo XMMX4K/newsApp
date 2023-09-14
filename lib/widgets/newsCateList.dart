@@ -7,7 +7,7 @@ class newsCateListView extends StatelessWidget {
     super.key,
   });
 
-  List<CategoryModel> categoryModel = [
+  final List<CategoryModel> categoryModel = [
     CategoryModel(image: 'assets/news/Buss.avif', categoryname: 'Business'),
     CategoryModel(
         image: 'assets/news/entertaiment.avif', categoryname: 'Entertaiment'),
