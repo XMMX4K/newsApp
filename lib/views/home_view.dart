@@ -15,8 +15,22 @@ class HomeView extends StatelessWidget {
               color: Colors.white, fontSize: 25, fontWeight: FontWeight.bold),
         ),
       ),
-      body: Column(
-        children: [NewsCategory()],
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+        child: Column(
+          children: [
+            SizedBox(
+              height: 100,
+              child: ListView.builder(
+                  physics: BouncingScrollPhysics(),
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 10,
+                  itemBuilder: (context, index) {
+                    return NewsCategory();
+                  }),
+            )
+          ],
+        ),
       ),
     );
   }
