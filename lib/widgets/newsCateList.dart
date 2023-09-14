@@ -8,7 +8,6 @@ class newsCateListView extends StatelessWidget {
   });
 
   final List<CategoryModel> categoryModel = [
-    CategoryModel(image: 'assets/news/Buss.avif', categoryname: 'Business'),
     CategoryModel(
         image: 'assets/news/entertaiment.avif', categoryname: 'Entertaiment'),
     CategoryModel(image: 'assets/news/general.avif', categoryname: 'General'),
@@ -16,6 +15,7 @@ class newsCateListView extends StatelessWidget {
     CategoryModel(image: 'assets/news/science.avif', categoryname: 'Science'),
     CategoryModel(image: 'assets/news/sports.avif', categoryname: 'Sports'),
     CategoryModel(image: 'assets/news/tech.avif', categoryname: 'Tech'),
+    CategoryModel(image: 'assets/news/Buss.avif', categoryname: 'Business'),
   ];
 
   @override

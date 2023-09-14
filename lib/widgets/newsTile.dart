@@ -8,12 +8,9 @@ class newsTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: ListView.builder(
-          itemCount: 10,
-          itemBuilder: (context, index) {
-            return NewsContain();
-          }),
-    );
+    return SliverList(
+        delegate: SliverChildBuilderDelegate((context, index) {
+      return NewsContain();
+    }, childCount: 10));
   }
 }
