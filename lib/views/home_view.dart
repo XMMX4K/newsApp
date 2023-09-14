@@ -8,6 +8,12 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: Container(
+        decoration: BoxDecoration(
+            color: Colors.blue.withOpacity(0.5),
+            borderRadius: BorderRadius.circular(500)),
+        child: IconButton(onPressed: () {}, icon: Icon(Icons.arrow_upward)),
+      ),
       appBar: AppBar(
         centerTitle: true,
         title: Text(
