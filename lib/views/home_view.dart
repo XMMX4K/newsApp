@@ -8,6 +8,7 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       floatingActionButton: Container(
         decoration: BoxDecoration(
             color: Colors.blue.withOpacity(0.5),
