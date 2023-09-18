@@ -1,3 +1,4 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 class newsModel {
   String title;
   String? subtitle;
@@ -11,7 +12,12 @@ class newsModel {
   factory newsModel.fromjson(jsondata) {
     return newsModel(
         title: jsondata['title'],
-        subtitle: jsondata['author'],
-        image: jsondata['url']);
+        subtitle: jsondata['description'],
+        image: jsondata['urlToImage']);
+  }
+
+  @override
+  String toString() {
+    return ' title : $title , subtitle : $subtitle , image : $image';
   }
 }

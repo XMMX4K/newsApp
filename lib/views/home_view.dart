@@ -1,6 +1,4 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:newsapp/api/getApi.dart';
 import 'package:newsapp/widgets/newsCateList.dart';
 import 'package:newsapp/widgets/newsTile.dart';
 
@@ -15,11 +13,7 @@ class HomeView extends StatelessWidget {
         decoration: BoxDecoration(
             color: Colors.blue.withOpacity(0.5),
             borderRadius: BorderRadius.circular(500)),
-        child: IconButton(
-            onPressed: () {
-              NewsService(Dio()).getNews();
-            },
-            icon: Icon(Icons.arrow_upward)),
+        child: IconButton(onPressed: () {}, icon: Icon(Icons.arrow_upward)),
       ),
       appBar: AppBar(
         centerTitle: true,

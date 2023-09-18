@@ -4,8 +4,7 @@ import 'package:newsapp/models/newsModel.dart';
 class NewsService {
   String baseUrl = 'https://newsapi.org/v2/everything';
   String apiKey = '70b7adf2f2c844d49be42662a16652e5';
-  String q = 'usa';
-  String category = 'general';
+  String q = 'south korea';
   final Dio dio;
   NewsService(this.dio);
   Future<List<newsModel>> getNews() async {
