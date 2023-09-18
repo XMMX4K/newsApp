@@ -1,43 +1,25 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:newsapp/api/getApi.dart';
-import 'package:newsapp/models/newsModel.dart';
 import 'package:newsapp/widgets/NewsListView.dart';
 
-class NewsListViewBuilder extends StatefulWidget {
+class NewsListViewBuilder extends StatelessWidget {
   const NewsListViewBuilder({
     super.key,
   });
 
   @override
-  State<NewsListViewBuilder> createState() => _NewsListViewBuilderState();
-}
-
-class _NewsListViewBuilderState extends State<NewsListViewBuilder> {
-  bool isLoading = true;
-  List<newsModel> newsListVIEEW = [];
-
-  @override
-  void initState() {
-    getNEWSSS();
-
-    super.initState();
-  }
-
-  Future<void> getNEWSSS() async {
-    newsListVIEEW = await NewsService(Dio()).getNews();
-    isLoading = false;
-
-    setState(() {});
-  }
-
-  @override
   Widget build(BuildContext context) {
-    return isLoading
-        ? SliverToBoxAdapter(
-            child: SizedBox(
+    return FutureBuilder(
+        future: NewsService(Dio()).getNews(),
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            return NewsListView(aaa: snapshot.data!);
+          } else {
+            return SizedBox(
                 height: MediaQuery.of(context).size.height / 1.4,
-                child: Center(child: CircularProgressIndicator())))
-        : NewsListView(aaa: newsListVIEEW);
+                child: Center(child: CircularProgressIndicator()));
+          }
+        });
   }
 }

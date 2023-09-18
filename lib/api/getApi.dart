@@ -8,16 +8,20 @@ class NewsService {
   final Dio dio;
   NewsService(this.dio);
   Future<List<newsModel>> getNews() async {
-    Response response = await dio.get('$baseUrl?q=$q&apiKey=$apiKey');
-    Map<String, dynamic> jsonData = response.data;
-    List<dynamic> articles = jsonData['articles'];
+    try {
+      Response response = await dio.get('$baseUrl?q=$q&apiKey=$apiKey');
+      Map<String, dynamic> jsonData = response.data;
+      List<dynamic> articles = jsonData['articles'];
 
-    List<newsModel> articList = [];
+      List<newsModel> articList = [];
 
-    for (var article in articles) {
-      newsModel art = newsModel.fromjson(article);
-      articList.add(art);
+      for (var article in articles) {
+        newsModel art = newsModel.fromjson(article);
+        articList.add(art);
+      }
+      return articList;
+    } catch (e) {
+      return [];
     }
-    return articList;
   }
 }
