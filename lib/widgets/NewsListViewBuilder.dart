@@ -1,22 +1,21 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:newsapp/api/getApi.dart';
 import 'package:newsapp/models/newsModel.dart';
-import 'package:newsapp/widgets/newsContain.dart';
+import 'package:newsapp/widgets/NewsListView.dart';
 
-class newsTile extends StatefulWidget {
-  const newsTile({
+class NewsListViewBuilder extends StatefulWidget {
+  const NewsListViewBuilder({
     super.key,
   });
 
   @override
-  State<newsTile> createState() => _newsTileState();
+  State<NewsListViewBuilder> createState() => _NewsListViewBuilderState();
 }
 
-class _newsTileState extends State<newsTile> {
+class _NewsListViewBuilderState extends State<NewsListViewBuilder> {
   bool isLoading = true;
-  List<newsModel> aaa = [];
+  List<newsModel> newsListVIEEW = [];
 
   @override
   void initState() {
@@ -26,7 +25,7 @@ class _newsTileState extends State<newsTile> {
   }
 
   Future<void> getNEWSSS() async {
-    aaa = await NewsService(Dio()).getNews();
+    newsListVIEEW = await NewsService(Dio()).getNews();
     isLoading = false;
 
     setState(() {});
@@ -39,9 +38,6 @@ class _newsTileState extends State<newsTile> {
             child: SizedBox(
                 height: MediaQuery.of(context).size.height / 1.4,
                 child: Center(child: CircularProgressIndicator())))
-        : SliverList(
-            delegate: SliverChildBuilderDelegate((context, index) {
-            return NewsContain(artic: aaa[index]);
-          }, childCount: aaa.length));
+        : NewsListView(aaa: newsListVIEEW);
   }
 }

@@ -22,8 +22,8 @@ class _NewsContainState extends State<NewsContain> {
                     '${widget.artic.image}',
                     fit: BoxFit.fill,
                   )
-                : Image.network(
-                    'https://images.unsplash.com/photo-1694949043973-1b51337cb8ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2127&q=80',
+                : Image.asset(
+                    'assets/news/Buss.avif',
                     fit: BoxFit.fill,
                   )),
         Text(
